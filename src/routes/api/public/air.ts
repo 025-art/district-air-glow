@@ -55,7 +55,7 @@ export const Route = createFileRoute("/api/public/air")({
           dataTerm: "DAILY",
           ver: "1.3",
         });
-        const url = `https://apis.data.go.kr/B552584/ArpltnInforInqireSvc/getMsrstnAcctoRltmMesureDnsty?serviceKey=${encodeURIComponent(
+        const url = `https://apis.data.go.kr/B552584/ArpltnInforInqireSvc/getMsrstnAcctoRltmMesureDnsty?serviceKey=${(key.includes("%") ? (k: string) => k : encodeURIComponent)(
           key,
         )}&${qs}`;
 
