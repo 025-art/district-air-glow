@@ -44,7 +44,7 @@ export const Route = createFileRoute("/api/public/air")({
         const hit = cache.get(district);
         if (hit && Date.now() - hit.at < TTL) return json({ data: hit.data, cached: true });
 
-        const key = process.env.AIRKOREA_API_KEY;
+        const key = process.env["AIRKOREA_API_KEY"];
         if (!key) return json({ error: "API 키가 설정되지 않았습니다." }, 500);
 
         const qs = new URLSearchParams({
